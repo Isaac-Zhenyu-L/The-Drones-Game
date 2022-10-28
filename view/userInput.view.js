@@ -11,4 +11,4 @@ const userInput = () => {
 		})
 	);
 };
-module.exports.userInput = userInput;
+module.exports = userInput;
