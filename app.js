@@ -19,7 +19,7 @@ const logger = require("./utils/logger");
 						destination
 					);
 					isDesinationValid
-						? logger(destination)
+						? logger(`The current position is ${destination.join(" ")}`)
 						: logger("The drone is out of scope, please input again");
 				} else {
 					logger(message);

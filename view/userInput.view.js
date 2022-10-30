@@ -6,10 +6,10 @@ const userInput = () => {
 	});
 	return new Promise((resolve) =>
 		interface.question(
-			"Please input moving commander of drones in the format, as same as 4 5 2 1 N MMRMLMQ\n: ",
-			(answer) => {
+			"Please input moving commander of drones in the format (Example: 4 5 2 1 N MMRMLMQ):\n ",
+			(input) => {
 				interface.close();
-				resolve(answer);
+				resolve(input);
 			}
 		)
 	);

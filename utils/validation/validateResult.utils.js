@@ -1,7 +1,8 @@
 const isUserInputVaild = async (userInput, callback) => {
 	let _response = {
 		isValid: false,
-		message: "",
+		message:
+			"The input is invaild, please try again, please refer to the below example",
 		payload: [],
 	};
 	if (userInput.length > 0) {
