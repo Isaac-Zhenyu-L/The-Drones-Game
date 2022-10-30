@@ -55,7 +55,17 @@ const inputFormatValidation = async (
 };
 
 const isFormatValidation = (_otherCommanders, _movingCommander) => {
-	return /^\d+$/.test(_otherCommanders) && /^[A-Z]+$/.test(_movingCommander);
+	const _array = _otherCommanders.split("");
+	const _maxPosition = _array.slice(0, 2);
+	const _landingPosition = _array.slice(2, 4);
+	const isMaxPositionVaild = _maxPosition.some((p) => p > 0);
+	const isLandingPositionVaild = _landingPosition.some((p) => p >= 0);
+	return (
+		isMaxPositionVaild &&
+		isLandingPositionVaild &&
+		/^\d+$/.test(_otherCommanders) &&
+		/^[A-Z]+$/.test(_movingCommander)
+	);
 };
 
 const isLastOneQ = (movingCommander) => {
