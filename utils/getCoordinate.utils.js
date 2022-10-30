@@ -1,16 +1,17 @@
-const getDirectionArray = require("./getDirectionArray.utils");
-const coordinateCaculator = require("./coordinateCaculator.utils");
+const getDirectionArray = require("./data-handle/getDirectionArray.utils");
+const coordinateCaculator = require("./app-core/coordinateCaculator.utils");
+const getMixedArray = require("./data-handle/getMixedArray.utils");
 
-const getCoordinate = async (movingCommander) => {
+const getCoordinate = async (movingCommander, landingPosition) => {
 	const _movingCommander = movingCommander;
-	let _destinationPosition = [2, 1, "N"];
-	let _result = [2, 1, "N"];
+	const _destinationPosition = await getMixedArray(landingPosition);
+	const _result = _destinationPosition;
 	const _directionIndexArray = await getDirectionArray(_movingCommander);
 	const calulatedResult = await coordinateCaculator(
 		_directionIndexArray,
 		_result,
 		_destinationPosition
 	);
-	console.log("final", calulatedResult);
+	return calulatedResult;
 };
 module.exports = getCoordinate;

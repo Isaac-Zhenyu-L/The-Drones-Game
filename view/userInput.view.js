@@ -5,10 +5,13 @@ const userInput = () => {
 		output: process.stdout,
 	});
 	return new Promise((resolve) =>
-		interface.question("Please provide next input: ", (answer) => {
-			interface.close();
-			resolve(answer);
-		})
+		interface.question(
+			"Please input moving commander of drones in the format, as same as 4 5 2 1 N MMRMLMQ\n: ",
+			(answer) => {
+				interface.close();
+				resolve(answer);
+			}
+		)
 	);
 };
 module.exports = userInput;
