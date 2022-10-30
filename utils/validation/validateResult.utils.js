@@ -50,7 +50,6 @@ const inputFormatValidation = async (
 		_movingCommander
 	);
 	const _isLastOneQ = await isLastOneQ(_movingCommander);
-	console.log("here", _isFormatValidation, _isLastOneQ);
 	callback(_isFormatValidation && _isLastOneQ);
 };
 
